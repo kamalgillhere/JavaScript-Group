@@ -1,0 +1,44 @@
+ion-content {
+  --background: #f4f4f4; /* Light Gray */
+}
+
+ion-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ion-card-header {
+  --ion-background-color: #4d4d4d; /* Dark Gray */
+}
+
+ion-button {
+  --border-radius: 50%;
+}
+
+ion-modal {
+  --background: rgba(0, 0, 0, 0.8);
+}
+
+ion-toolbar {
+  --background: #4d4d4d; /* Dark Gray */
+}
+
+ion-title {
+  color: #ffffff;
+}
+
+.due-today {
+  background-color: #ff6347; /* Tomato */
+}
+
+.due-soon {
+  background-color: #ffffff; /* Emerald Green */
+}
+
+.due-normal {
+  background-color: #ffffff; /* Amethyst */
+}
+
+

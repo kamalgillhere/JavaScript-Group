@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">To-Do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card *ngFor="let item of todoList" [class]="getCardColor(item.itemDueDate)">
+    <ion-card-header [color]="getPriorityColor(item.itemPriority)">
+      <ion-card-subtitle>{{item.itemCategory}}</ion-card-subtitle>
+      <ion-card-title class="ion-text-uppercase">{{item.itemName}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="ion-text-wrap">Due: {{item.itemDueDate | date:'fullDate'}}</p>
+    </ion-card-content>
+
+    <ion-row class="ion-justify-content-end ion-padding">
+      <ion-button fill="clear" color="success" (click)="completeTask(item)">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="danger" (click)="deleteTask(item)">
+        <ion-icon name="trash-bin-outline"></ion-icon>
+      </ion-button>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showAddTaskModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal [showBackdrop]="true" [keyboardClose]="true" [backdropDismiss]="true" [(ngModel)]="newTask">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Add New Task</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Task Name</ion-label>
+          <ion-input [(ngModel)]="newTask.itemName" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Due Date</ion-label>
+          <ion-datetime display-format="MMM DD, YYYY" [(ngModel)]="newTask.itemDueDate" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Priority</ion-label>
+          <ion-select [(ngModel)]="newTask.itemPriority" required>
+            <ion-select-option value="high">High</ion-select-option>
+            <ion-select-option value="middle">Medium</ion-select-option>
+            <ion-select-option value="low">Low</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Category</ion-label>
+          <ion-input [(ngModel)]="newTask.itemCategory" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="addTask()">Add</ion-button>
+          <ion-button (click)="closeAddTaskModal()">Cancel</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-modal>
+</ion-content>
