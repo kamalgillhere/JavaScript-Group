@@ -43,18 +43,18 @@ Make sure you have the following software installed:
 
 2. Open your web browser and navigate to `http://localhost:8100/` to view the application.
 
-Building for Production
+### Building for Production
 
 To build the application for production, run:
 
 ionic build --prod
 
-Running Unit Tests:
+## Running Unit Tests:
 
 Run the tests with the following command:
 ng test
 
-Contributing
+## Contributing
 If you'd like to contribute, please follow these steps:
 
 Fork the repository on GitHub.
@@ -70,3 +70,29 @@ git push origin feature/new-feature
 
 Open a pull request on the original repository.
 
+## VS Code usefull Extension:
+
+1.Angular Essentials:
+
+Description: Provides a set of extensions for Angular development, including code snippets, IntelliSense, and support for Angular Language Service.
+Installation: Search for "Angular Essentials" in the Extensions view in VS Code.
+
+2.Ionic 4 Snippets:
+
+Description: Offers a collection of Ionic 4 code snippets for quickly generating common Ionic components and features.
+Installation: Search for "Ionic 4 Snippets" in the Extensions view in VS Code.
+
+3.Prettier - Code formatter:
+
+Description: Automatically formats code according to Prettier rules, ensuring consistent code style.
+Installation: Search for "Prettier - Code formatter" in the Extensions view in VS Code.
+
+4.Debugger for Chrome:
+
+Description: Enables debugging of JavaScript code in the Chrome browser directly from VS Code.
+Installation: Search for "Debugger for Chrome" in the Extensions view in VS Code.
+
+5.Angular Schematics:
+
+Description: Adds support for Angular Schematics, allowing you to generate and run schematics directly from VS Code.
+Installation: Search for "Angular Schematics" in the Extensions view in VS Code.
